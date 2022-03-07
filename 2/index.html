@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./1.png">
+    <p>
+        telnet u47587.kubsu-dev.ru 80<br />
+        GET /index.html HTTP/1.0
+    </p>
+    <img src="./2.png">
+    <p>
+        telnet u47587.kubsu-dev.ru 80<br />
+        GET /backend/ HTTP/1.1<br />
+        HOST: u47587.kubsu-dev.ru<br />
+    </p>
+    <img src="./3.png">
+    <p>
+        telnet u47587.kubsu-dev.ru 80<br />
+        HEAD /backend/2/files/file.tar.gz HTTP/1.1<br />
+        HOST: u47587.kubsu-dev.ru<br />
+    </p>
+    <img src="./4.png">
+    <p>
+        telnet u47587.kubsu-dev.ru 80<br />
+        HEAD /backend/2/files/image.png HTTP/1.1<br />
+        HOST: u47587.kubsu-dev.ru<br />
+    </p>
+    <img src="./5.png">
+    <p>
+        telnet u47587.kubsu-dev.ru 80<br />
+        HEAD /backend/2/files/index.php HTTP/1.1<br />
+        HOST: u47587.kubsu-dev.ru<br />
+        Content-Type: application/x-www-form-urlencoded<br />
+        Content-Length: 12
+        <br />
+        comment=test
+    </p>
+    <img src="./6.png">
+    <p>
+        telnet u47587.kubsu-dev.ru 80<br />
+        GET /backend/2/files/file.tar.gz HTTP/1.1<br />
+        HOST: u47587.kubsu-dev.ru<br />
+        <br />
+        Range: bytes=0-100
+    </p>
+    <img src="./7.png">
+    <p>
+        telnet u47587.kubsu-dev.ru 80<br />
+        HEAD /backend/2/files/index.php HTTP/1.1<br />
+        HOST: u47587.kubsu-dev.ru<br />
+    </p>
+</body>
+
+</html>
