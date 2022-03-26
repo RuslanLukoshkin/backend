@@ -64,10 +64,10 @@
             <div class="block">
                 <span class="block-title">Ваш персонаж</span>
                 <select class="form-select form-select-lg mb-2" name="select[]" multiple>
-                    <option value="ora" selected>Воланд</option>
-                    <option value="emerald splash">Фагот</option>
-                    <option value="sword">Азазелло</option>
-                    <option value="sword">Бегемот</option>
+                    <option value="brain" selected>Воланд</option>
+                    <option value="magic">Фагот</option>
+                    <option value="guns">Азазелло</option>
+                    <option value="fun">Бегемот</option>
 
                 </select>
             </div>
