@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $select = $db->prepare("select * FROM powers2 WHERE user_login = ?");
             $select->execute(array($member));
             $result = $select->fetch(PDO::FETCH_ASSOC);
-            $values['select'] = $result['team'];
+            $values['select'] = $result['powers'];
         } catch (PDOException $e) {
             print('Error : ' . $e->getMessage());
             exit();
@@ -223,8 +223,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $stmt = $db->prepare("UPDATE members SET name = ?, email = ?, date = ?, gender = ?, limbs = ?, bio = ?, policy = ? WHERE login = ?");
             $stmt->execute(array($name, $email, $date, $gender, $limbs, $bio, $policy, $member));
 
-            $team = $db->prepare("UPDATE powers2 SET team = ? WHERE user_login = ? ");
-            $team->execute(array($squad, $member));
+            $powers = $db->prepare("UPDATE powers2 SET powers = ? WHERE user_login = ? ");
+            $powers->execute(array($squad, $member));
         } catch (PDOException $e) {
             print('Error : ' . $e->getMessage());
             exit();
@@ -241,8 +241,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $stmt = $db->prepare("INSERT INTO members SET login = ?, pass = ?, name = ?, email = ?, date = ?, gender = ?, limbs = ?, bio = ?, policy = ?");
             $stmt->execute(array($login, $hash, $name, $email, $date, $gender, $limbs, $bio, $policy));
 
-            $team = $db->prepare("INSERT INTO powers2 SET team = ?, user_login = ? ");
-            $team->execute(array($squad, $login));
+            $powers = $db->prepare("INSERT INTO powers2 SET powers = ?, user_login = ? ");
+            $powers->execute(array($squad, $login));
         } catch (PDOException $e) {
             print('Error : ' . $e->getMessage());
             exit();
