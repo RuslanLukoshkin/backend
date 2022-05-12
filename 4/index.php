@@ -156,11 +156,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $db = new PDO('mysql:host=localhost;dbname=u47587', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
     try {
-        $stmt = $db->prepare("INSERT INTO members SET name = ?, email = ?, date = ?, gender = ?, limbs = ?, bio = ?, policy = ?");
+        $stmt = $db->prepare("INSERT INTO clients SET name = ?, email = ?, date = ?, gender = ?, limbs = ?, bio = ?, policy = ?");
         $stmt->execute(array($name, $email, $date, $gender, $limbs, $bio, $policy));
         $power_id = $db->lastInsertId();
 
-        $select = $db->prepare("INSERT INTO powers2 SET powers = ?, user_id = ? ");
+        $select = $db->prepare("INSERT INTO powers SET powers = ?, user_id = ? ");
         $select->execute(array($powers, $power_id));
     } catch (PDOException $e) {
         print('Error : ' . $e->getMessage());
