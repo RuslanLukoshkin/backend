@@ -47,3 +47,7 @@ body {
     border: 1px solid #d6bf9d !important;
     box-shadow: 0 0 10px #d6bf9d !important;
 }
+
+.error {
+    color: rgba(245, 46, 46, 1);
+}
